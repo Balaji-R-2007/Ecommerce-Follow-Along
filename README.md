@@ -31,3 +31,7 @@ Authentication ensures only the right people can access certain features. For ex
 
 - Users need to log in to place orders or see their personal data.
 -  It keeps the app secure by verifying users' identities.
+
+## Milestone 2: 
+
+- created login page in frontend.
