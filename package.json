@@ -1,0 +1,29 @@
+{
+  "name": "ecommerce-follow-along",
+  "version": "1.0.0",
+  "description": "Welcome to the \"Ecommerce Follow Along Project\". This is a hands-on project where we will build a complete e-commerce application using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The goal is to learn how to develop a full-stack web application step by step.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/server.js",
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Balaji-R-2007/Ecommerce-Follow-Along.git"
+  },
+  "keywords": [],
+  "author": "balaji",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Balaji-R-2007/Ecommerce-Follow-Along/issues"
+  },
+  "homepage": "https://github.com/Balaji-R-2007/Ecommerce-Follow-Along#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "nodemon": "^3.1.9"
+  }
+}
