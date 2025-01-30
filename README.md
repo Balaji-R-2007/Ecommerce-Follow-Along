@@ -48,3 +48,6 @@ Authentication ensures only the right people can access certain features. For ex
 - Created a User Model to define how user data is structured in the database.
 - Developed a User Controller to manage user interactions, like adding or retrieving data.
 - Configured Multer to handle file uploads, allowing users to store files such as images.
+
+## Milestone 5:
+In this milestone, I built the Sign-Up page for user registration using HTML and CSS. I implemented form validation to ensure valid inputs, like email format and password security. This enhances user experience and prevents errors. All changes have been committed and pushed to the repository.
