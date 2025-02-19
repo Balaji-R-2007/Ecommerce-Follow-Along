@@ -73,3 +73,4 @@ In this milestone, we created a My Products page that displays a list of product
 
 ## Milestone 12 :
 we created a My Products page that displays a list of products created by the user. The page fetches products from the database based on the user's email and displays them in a grid layout. This allows users to view and manage their products efficiently.
+
