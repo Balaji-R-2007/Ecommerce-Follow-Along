@@ -74,3 +74,8 @@ In this milestone, we created a My Products page that displays a list of product
 ## Milestone 12 :
 we created a My Products page that displays a list of products created by the user. The page fetches products from the database based on the user's email and displays them in a grid layout. This allows users to view and manage their products efficiently.
 
+## Milestone 13:
+In this milestone, we implemented the Update Product functionality, allowing users to edit product details. The update form dynamically loads the product's existing data, and changes are submitted via an API call. This ensures that users can modify product information easily while maintaining data integrity.
+
+## Milestone 14:
+This milestone focused on integrating the Delete Product functionality, allowing users to remove products permanently. A confirmation prompt ensures accidental deletions are avoided
