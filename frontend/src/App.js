@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from './pages/LoginPage';  // Import directly
 import SignUpPage from './pages/SignupPage';
 import "./App.css";
+
+import Cart from './pages/Cart';
 import Home from './pages/Home'; 
 import CreateProduct from './pages/CreateProduct';
 // import MyProduct from './pages/MyProducts';
@@ -17,8 +19,8 @@ const App = () => {
         <Route path="/signup" element={<SignUpPage />} />
       <Route path="/create-product/:id" element={<CreateProduct />} />
       <Route path="/create-product" element={<CreateProduct />} />
-
-      <Route path='/myproducts' element={<MyProducts />} />
+      <Route path='/cart' element={<Cart />} />
+      <Route path='/my-products' element={<MyProducts />} />
       </Routes>
     </BrowserRouter>
   );
