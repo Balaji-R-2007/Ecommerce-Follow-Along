@@ -83,3 +83,7 @@ This milestone focused on integrating the Delete Product functionality, allowing
 ## Milestone 15:
 
 creating a navbar in react and tailwind css to enable smooth navigation between pages.
+
+## Milestone 16:
+
+creating a product details page in frontend and it display the details of the product and a add to cart button.
