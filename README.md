@@ -79,3 +79,7 @@ In this milestone, we implemented the Update Product functionality, allowing use
 
 ## Milestone 14:
 This milestone focused on integrating the Delete Product functionality, allowing users to remove products permanently. A confirmation prompt ensures accidental deletions are avoided
+
+## Milestone 15:
+
+creating a navbar in react and tailwind css to enable smooth navigation between pages.
