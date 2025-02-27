@@ -1,0 +1,19 @@
+meta {
+  name: cart post
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/api/v2/product/cart
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "userId": "dwefwe@GVV.COM",
+  "productId":"67bfeb987be05d3066fcd5df",
+  "quantity":1
+  }
+}

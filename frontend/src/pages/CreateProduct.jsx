@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import NavBar from "../components/Navbar";
 
 const CreateProduct = () => {
     const { id } = useParams();
@@ -83,7 +84,7 @@ const CreateProduct = () => {
                 );
                 if (response.status === 200) {
                     alert("Product updated successfully!");
-                    navigate("/myproducts");
+                    navigate("/my-products");
                 }
             } else {
                 const response = await axios.post(
@@ -114,6 +115,7 @@ const CreateProduct = () => {
 
     return (
         <div className="w-[90%] max-w-[500px] bg-white shadow h-auto rounded-[4px] p-4 mx-auto">
+            <NavBar/>
             <h5 className="text-[24px] font-semibold text-center">
                 {isEdit ? "Edit Product" : "Create Product"}
             </h5>

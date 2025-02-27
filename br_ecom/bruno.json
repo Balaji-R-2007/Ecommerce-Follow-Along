@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "br_ecom",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -3,22 +3,22 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'please provide the product name'],
+        required: [true, 'Please provide the product name'],
     },
     price: {
         type: Number,
-        required: [true, 'please provide the product price'],
+        required: [true, 'Please provide the product price'],
     },
     description: {
         type: String,
-        required: [true, 'please provide the product description'],
+        required: [true, 'Please provide the product description'],
     },
     category: {
         type: String,
         required: [true, 'Product category is required'],
     },
     tags: {
-        type: String,
+        type: [String],
         default: [],
     },
     stock: {
@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, 'Product email is required'],
-        match : [/.+@.+\..+/,"please enter a valid email address"]
+        match: [/.+@.+\..+/, "Please enter a valid email address"]
     },
     createdAt: {
         type: Date,
@@ -36,13 +36,24 @@ const productSchema = new mongoose.Schema({
     },
     images: {
         type: [String],
-        default: [],
         required: [true, 'Product images are required'],
     },
-},
-{
+    cart: [
+        {
+            productid: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Product',
+                required: [true, "Please provide the product ID"]
+            },
+            quantity: {
+                type: Number,
+                required: [true, "Please provide the quantity"],
+                min: [0, "Quantity cannot be negative"],
+            },
+        },
+    ],
+}, {
     timestamps: true,
-}
-);
+});
 
 module.exports = mongoose.model('Product', productSchema);
