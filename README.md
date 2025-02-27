@@ -87,3 +87,9 @@ creating a navbar in react and tailwind css to enable smooth navigation between 
 ## Milestone 16:
 
 creating a product details page in frontend and it display the details of the product and a add to cart button.
+
+## Milestone 17:
+In this milestone, we designed the cart schema to store product details in a user's cart, including product ID, name, quantity, price, and total. The schema also tracks the total amount for the cart and associates the cart with a specific user.
+
+## Milestone 18: 
+In this milestone, we created a **GET `/cart`** endpoint to fetch the user's cart details, including product information and total amount. The endpoint ensures that only authenticated users can access their cart and retrieves the cart data from the database.
