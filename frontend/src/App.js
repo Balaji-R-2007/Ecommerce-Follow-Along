@@ -10,6 +10,7 @@ import CreateProduct from './pages/CreateProduct';
 // import MyProduct from './pages/MyProducts';
 import MyProducts from './pages/MyProducts';
 import ProductDetails from './pages/productDetails';
+import Profile from "./pages/profile.jsx";
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,7 +24,7 @@ const App = () => {
       <Route path='/cart' element={<Cart />} />
       <Route path='/my-products' element={<MyProducts />} />
       <Route path='/product/:id' element={<ProductDetails />} />
-      
+      <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

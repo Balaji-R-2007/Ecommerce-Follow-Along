@@ -4,11 +4,13 @@ import CreateProduct from "./pages/CreateProduct";
 import Home from "./pages/Home";
 import MyProducts from "./pages/MyProducts";
 import Cart from "./pages/cart";
+import Profile from "./pages/profile"
 export {
     LoginPage,
     SignupPage,
     Home,
     MyProducts,
     Cart,
-    CreateProduct
+    CreateProduct,
+    Profile
 }
