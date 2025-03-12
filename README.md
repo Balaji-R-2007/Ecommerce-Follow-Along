@@ -99,3 +99,13 @@ In this milestone, we created a cart page to display the products in the user's 
 
 ## Milestone 20:
 In this milestone, we created a GET /user/profile endpoint to fetch the user's profile details, including their name, email, profile photo, and addresses. Additionally, a functionality to send the user’s data via email was implemented. On the frontend, we created a profile page that displays the user’s profile photo, name, email in one section, and addresses in another. If no addresses are found, a "No address found" message is displayed, along with an "Add Address" button.
+
+## Milestone 21
+In this milestone, we created a frontend form to collect user addresses. The form includes fields for country, city, address line 1, address line 2, zip code, and address type. The input values are stored in a state to manage the data efficiently. 
+On the frontend, we implemented navigation from the profile page to the address form. When the user clicks on the "Add Address" button in the profile, they are redirected to the address form page. After filling in the details, the data is displayed in the console for now, with future plans for backend integration.
+Additionally, the form validates required fields before submission and ensures a smooth user experience. The implementation is designed to be scalable, with plans for further enhancements like backend storage and address editing functionality.
+## Milestone 22
+In this milestone, we created a **POST /user/address** endpoint to store addresses inside the user profile in the database. This endpoint receives address data from the frontend form and adds it to the address array in the user collection.
+On the backend, we validated the received address fields and ensured they were correctly stored inside the database. On the frontend, we integrated the address form submission to send user address details to this API. Once submitted, the new address gets stored successfully in the user's profile.
+If no addresses exist, the profile page continues to display a **"No address found"** message with an **"Add Address"** button, allowing users to add new addresses.
+This milestone helps in understanding how to create an endpoint that stores address data and integrates it with the frontend for a seamless user experience.

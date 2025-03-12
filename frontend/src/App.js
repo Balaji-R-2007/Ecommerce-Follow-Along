@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from './pages/LoginPage';  // Import directly
 import SignUpPage from './pages/SignupPage';
 import "./App.css";
-
+import CreateAddress from "./pages/createAddress";
 import Cart from './pages/Cart';
 import Home from './pages/Home'; 
 import CreateProduct from './pages/CreateProduct';
@@ -25,6 +25,7 @@ const App = () => {
       <Route path='/my-products' element={<MyProducts />} />
       <Route path='/product/:id' element={<ProductDetails />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/create-address" element={<CreateAddress />} />
       </Routes>
     </BrowserRouter>
   );
