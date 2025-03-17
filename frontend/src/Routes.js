@@ -6,7 +6,9 @@ import MyProducts from "./pages/MyProducts";
 import Cart from "./pages/cart";
 import Profile from "./pages/profile";
 import CreateAddress from "./pages/createAddress";
+import SelectAddress from "./pages/SelectAddress";
 export {
+    SelectAddress,
     LoginPage,
     SignupPage,
     Home,

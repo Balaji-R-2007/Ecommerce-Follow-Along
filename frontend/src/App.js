@@ -11,6 +11,7 @@ import CreateProduct from './pages/CreateProduct';
 import MyProducts from './pages/MyProducts';
 import ProductDetails from './pages/productDetails';
 import Profile from "./pages/profile.jsx";
+import SelectAddress from './pages/SelectAddress.jsx';
 const App = () => {
   return (
     <BrowserRouter>
@@ -26,6 +27,7 @@ const App = () => {
       <Route path='/product/:id' element={<ProductDetails />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-address" element={<CreateAddress />} />
+      <Route path="/select-address" element={<SelectAddress />} />
       </Routes>
     </BrowserRouter>
   );

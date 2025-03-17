@@ -109,3 +109,6 @@ In this milestone, we created a **POST /user/address** endpoint to store address
 On the backend, we validated the received address fields and ensured they were correctly stored inside the database. On the frontend, we integrated the address form submission to send user address details to this API. Once submitted, the new address gets stored successfully in the user's profile.
 If no addresses exist, the profile page continues to display a **"No address found"** message with an **"Add Address"** button, allowing users to add new addresses.
 This milestone helps in understanding how to create an endpoint that stores address data and integrates it with the frontend for a seamless user experience.
+
+## Milestone 23:
+Milestone 23 focuses on implementing the order placement flow. A "Place Order" button will be added to the cart page, which, when clicked, navigates to the "Select Address" page. This page will display all available addresses associated with the user, allowing them to choose one. A backend endpoint will be created to retrieve and send all user addresses to the frontend, ensuring seamless address selection before order confirmation.
