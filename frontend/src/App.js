@@ -11,7 +11,7 @@ import CreateProduct from './pages/CreateProduct';
 import MyProducts from './pages/MyProducts';
 import ProductDetails from './pages/productDetails';
 import Profile from "./pages/profile.jsx";
-import SelectAddress from './pages/SelectAddress.jsx';
+import SelectAddress from './pages/SelectAddress.jsx';import OrderConfirmation from "./pages/OrderConfirmation";
 const App = () => {
   return (
     <BrowserRouter>
@@ -27,7 +27,8 @@ const App = () => {
       <Route path='/product/:id' element={<ProductDetails />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-address" element={<CreateAddress />} />
-      <Route path="/select-address" element={<SelectAddress />} />
+      <Route path="/select-address" element={<SelectAddress />} />    
+       <Route path="/order-confirmation" element={<OrderConfirmation />} />
       </Routes>
     </BrowserRouter>
   );
