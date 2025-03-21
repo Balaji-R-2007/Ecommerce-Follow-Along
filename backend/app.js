@@ -28,7 +28,7 @@ const product = require('./controller/product');
 const orders = require('./controller/orders');
 app.use("/api/v2/user", user);
 app.use("/api/v2/product", product);
-app.use("/api/v2/orders", orders);
+app.use("/api/v2/order", orders);
 app.use(ErrorHandler);
 
 module.exports = app;

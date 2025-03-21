@@ -1,3 +1,4 @@
+const express =require('express');
 const router = express.Router();
 const Order = require('../model/order'); 
 const User = require('../model/user');   
@@ -82,6 +83,59 @@ router.post('/place-order', async (req, res) => {
           
     } catch (error) {
         console.error('Error placing orders:', error);
+        res.status(500).json({ message: error.message });
+    }
+
+});
+const handlePlaceOrder = async () => {
+        try {
+            
+            const orderItems = cartItems.map(item => ({
+                product: item._id,
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price,
+                image: item.images && item.images.length > 0 ? item.images[0] : '/default-avatar.png'
+            }));
+
+            // Construct payload with email, shippingAddress, and orderItems
+            const payload = {
+                email,
+                shippingAddress: selectedAddress,
+                orderItems,
+            };
+
+            // Send POST request to place orders
+            const response = await axios.post('http://localhost:8000/api/v2/orders/place-order', payload);
+            console.log('Orders placed successfully:', response.data);
+
+            navigate('/order-success'); 
+        } catch (err) {
+            console.error('Error placing order:', err);
+            setError(err.message || 'An unexpected error occurred while placing the order.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+router.get('/my-orders', async (req, res) => {
+    try {
+        const { email } = req.query;
+
+        if (!email) {
+            return res.status(400).json({ message: 'Email is required.' });
+        }
+
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        const orders = await Order.find({ user: user._id });
+
+        res.status(200).json({ orders });
+    } catch (error) {
+        console.error('Error fetching orders:', error);
         res.status(500).json({ message: error.message });
     }
 });
