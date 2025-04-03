@@ -124,3 +124,6 @@ This endpoint allows retrieval of a user's order history using their email addre
 
 # Milestone 27:
 Milestone 27 focuses on implementing the My Orders page in the e-commerce project. This involves sending a GET request to the /my-orders endpoint, where the user's email is passed to retrieve all their orders from the database. The fetched orders will then be displayed dynamically on the My Orders page, ensuring users can easily view their purchase history. Additionally, a navigation link to this page will be added to the navbar for better accessibility. This update enhances the user experience by providing a dedicated section for order tracking and management.
+
+# Milestone 28:
+Milestone 28 enhances the **My Orders** page by adding a **Cancel Order** button for each active order. This button will allow users to cancel an order if it has not already been canceled. If an order is already marked as canceled, the button will not be displayed. To achieve this, a new **API endpoint** will be created to handle order cancellations. When a user clicks the cancel button, the order **ID** will be sent to this endpoint, which will retrieve the order, update its status to **canceled**, and save the changes. This feature improves order management and gives users more control over their purchases.
