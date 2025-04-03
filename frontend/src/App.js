@@ -11,13 +11,16 @@ import CreateProduct from './pages/CreateProduct';
 import MyProducts from './pages/MyProducts';
 import ProductDetails from './pages/productDetails';
 import Profile from "./pages/profile.jsx";
-import SelectAddress from './pages/SelectAddress.jsx';import OrderConfirmation from "./pages/OrderConfirmation";
+import Myorder from "./pages/Myorder.jsx";
+import SelectAddress from './pages/SelectAddress.jsx';
+import OrderConfirmation from "./pages/OrderConfirmation";
 const App = () => {
   return (
     <BrowserRouter>
    
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/myorders" element={<Myorder/>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
       <Route path="/create-product/:id" element={<CreateProduct />} />
