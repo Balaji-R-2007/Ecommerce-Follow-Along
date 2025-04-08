@@ -133,3 +133,9 @@ In this milestone, we set up the PayPal sandbox environment for online payments.
 
 ## Milestone 30 - Implementing PayPal Online Payments
 In this milestone, we integrate PayPal online payments into our project. Using the previously created PayPal sandbox account and client ID, implement the PayPal API to enable online transactions. Install the react-paypal-js NPM package, which provides the PayPalScriptProvider component to display various payment methods, including credit and debit cards. This step will enhance your understanding of integrating online payments seamlessly into your application.
+
+# Milestone 31
+
+
+
+In this milestone, we set up global state management in our React application using the react-redux package. First, we installed react-redux via npm. Then, we created a new folder named store containing two files: store.js and userActions.js. Inside store.js, we defined a userReducer function responsible for managing the user's email in the global state and configured the Redux store using this reducer. In userActions.js, we created an action creator function named setEmail to dispatch actions that update the email value in the store. Finally, in index.js, we wrapped the root <App /> component with Redux’s <Provider> component and passed the store as a prop to ensure the global state is accessible throughout the application. This setup allows us to manage and access the user's email globally using Redux.
