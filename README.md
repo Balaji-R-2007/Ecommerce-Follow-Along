@@ -139,3 +139,8 @@ In this milestone, we integrate PayPal online payments into our project. Using t
 
 
 In this milestone, we set up global state management in our React application using the react-redux package. First, we installed react-redux via npm. Then, we created a new folder named store containing two files: store.js and userActions.js. Inside store.js, we defined a userReducer function responsible for managing the user's email in the global state and configured the Redux store using this reducer. In userActions.js, we created an action creator function named setEmail to dispatch actions that update the email value in the store. Finally, in index.js, we wrapped the root <App /> component with Redux’s <Provider> component and passed the store as a prop to ensure the global state is accessible throughout the application. This setup allows us to manage and access the user's email globally using Redux.
+
+# Milestone 32
+
+
+In Milestone 32, we implemented global state management to handle user authentication by storing the user's email after login. When the user logs in successfully, we use the dispatch method from Redux to store their email in a global state using a slice (userSlice). This allows us to access the email across different components using the useSelector hook. By doing this, we avoid passing props manually and ensure a consistent user context throughout the application. This email is then used to filter and fetch data specific to the logged-in user in other pages, enhancing both security and user experience.
