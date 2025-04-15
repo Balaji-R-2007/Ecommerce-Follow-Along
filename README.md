@@ -144,3 +144,9 @@ In this milestone, we set up global state management in our React application us
 
 
 In Milestone 32, we implemented global state management to handle user authentication by storing the user's email after login. When the user logs in successfully, we use the dispatch method from Redux to store their email in a global state using a slice (userSlice). This allows us to access the email across different components using the useSelector hook. By doing this, we avoid passing props manually and ensure a consistent user context throughout the application. This email is then used to filter and fetch data specific to the logged-in user in other pages, enhancing both security and user experience.
+
+# Milestone 33
+
+
+
+To begin using JWT authentication in your Node.js application, first install the jsonwebtoken package by running npm install jsonwebtoken in your project directory. Once installed, you can use the sign method from this package to create a JWT token by passing a payload that includes the user's email and ID. To control how long the token remains valid, you can set the expiresIn property using the maxAge option, such as '1d' for one day or '3h' for three hours. After generating the token, use the res.cookie() method provided by Express to store the token in a cookie on the user's browser. For security purposes, ensure the cookie is set with httpOnly: true to prevent access from client-side scripts. Here’s an example of setting the cookie: res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });, where maxAge is in milliseconds. This setup helps manage user sessions securely using JWTs stored in browser cookies.
