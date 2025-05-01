@@ -438,4 +438,42 @@ router.post("/cart", async (req, res) => {
     });
   
   });
+
+router.get("/search", async (req, res) => {
+  const { keyword, category, minPrice, maxPrice } = req.query;
+  
+  const query = {};
+  
+  // Search by keyword in name or description
+  if (keyword) {
+    query.$or = [
+      { name: { $regex: keyword, $options: "i" } },
+      { description: { $regex: keyword, $options: "i" } }
+    ];
+  }
+  
+  // Filter by category
+  if (category) {
+    query.category = category;
+  }
+  
+  // Filter by price range
+  if (minPrice || maxPrice) {
+    query.price = {};
+    if (minPrice) query.price.$gte = minPrice;
+    if (maxPrice) query.price.$lte = maxPrice;
+  }
+  
+  try {
+    const products = await Product.find(query);
+    res.status(200).json({
+      success: true,
+      products,
+    });
+  } catch (err) {
+    console.error("Server error:", err);
+    res.status(500).json({ error: "Server Error" });
+  }
+});
+
 module.exports = router;
