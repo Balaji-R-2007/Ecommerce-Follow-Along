@@ -99,6 +99,12 @@ const userSchema = new mongoose.Schema({
 
 
  ],
+ wishlist: [
+  {
+    type: mongoose.Schema.ObjectId,
+    ref: "Product",
+  }
+ ],
  createdAt:{
   type: Date,
   default: Date.now(),
