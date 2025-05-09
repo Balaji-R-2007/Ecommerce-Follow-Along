@@ -1,34 +1,59 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
-const cors = require("cors");
-const cookieParser = require("cookie-parser");
-
-const bodyParser = require("body-parser");
-const ErrorHandler = require("./middleware/error");
+// Install these packages:
+// 
 
 const app = express();
 
-app.use(express.json());
-app.use(cookieParser());
+// Set security HTTP headers
+app.use(helmet());
 
+// Body parser
+app.use(express.json({ limit: '10kb' }));
+
+// Cookie parser
+app.use(cookieParser());
+~
+// Data sanitization against NoSQL query injection
+app.use(mongoSanitize());
+
+// Data sanitization against XSS
+app.use(xss());
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP, please try again later'
+});
+app.use('/api', limiter);
+
+// CORS
 app.use(cors({
   origin: 'http://localhost:3000',
-  credentials: true,
+  credentials: true
 }));
 
-app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
+// Routes
+app.use('/api/v2/user', require('./controller/user'));
+app.use('/api/v2/product', require('./controller/product'));
+// Add other routes
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use('/products', express.static(path.join(__dirname, 'products')));
+// Error handling middleware
+app.use((err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.message = err.message || 'Internal Server Error';
 
-const user = require("./controller/user");
-const product = require('./controller/product');
-
-const orders = require('./controller/orders');
-app.use("/api/v2/user", user);
-app.use("/api/v2/product", product);
-app.use("/api/v2/order", orders);
-app.use(ErrorHandler);
+  res.status(err.statusCode).json({
+    success: false,
+    message: err.message,
+  });
+});
 
 module.exports = app;
