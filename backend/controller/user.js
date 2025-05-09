@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const User = require("../model/user");
+const User = require("../model/user.js");
 const router = express.Router();
 const { upload } = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
-const catchAsyncErrors = require("../middleware/catchAsynErrors");
+const catchAsyncErrors = require("../middleware/catchAsynErrors.js");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
@@ -177,6 +177,28 @@ router.get("/logout", catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: "Logged out successfully",
+  });
+}));
+
+// Import your middleware
+const { isAuthenticated } = require("../middleware/auth");
+
+// Add this route handler to your router
+router.get('/verify-token', isAuthenticated, catchAsyncErrors(async (req, res) => {
+  // If the request reaches here, it means the isAuthenticated middleware passed
+  // which confirms the token is valid
+  
+  // Return user details without the password
+  const user = {
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    role: req.user.role
+  };
+  
+  res.status(200).json({
+    success: true,
+    user
   });
 }));
 
